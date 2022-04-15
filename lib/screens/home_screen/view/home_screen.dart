@@ -7,6 +7,8 @@ import 'package:tictactoe_cloudproject/extensions/extensions.dart';
 import 'package:tictactoe_cloudproject/screens/home_screen/bloc/home_screen_bloc/homescreen_bloc.dart';
 import 'package:tictactoe_cloudproject/screens/home_screen/bloc/theme_bloc/bloc/theme_bloc.dart';
 import 'package:tictactoe_cloudproject/screens/home_screen/view/popupmenu.dart';
+import 'package:tictactoe_cloudproject/screens/one_player_game_screen/view/game_screen.dart';
+import 'package:tictactoe_cloudproject/screens/two_player_game_screen/view/game_screen.dart';
 
 import 'creating_game_dailog.dart';
 import 'join_game_dailog.dart';
