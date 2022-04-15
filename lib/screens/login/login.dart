@@ -7,6 +7,7 @@ import 'package:google_sign_in/google_sign_in.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 import 'package:tictactoe_cloudproject/rounded_btn/rounded_btn.dart';
 import 'package:tictactoe_cloudproject/screens/create_account/create_account.dart';
+import 'package:tictactoe_cloudproject/screens/home_screen/view/home_screen.dart';
 import 'package:tictactoe_cloudproject/utils/validator.dart';
 
 class Login extends StatefulWidget {
@@ -219,7 +220,10 @@ class _LoginState extends State<Login> {
                                       email: emailCont.text,
                                       password: passCont.text);
                               if (user != null) {
-                                // Navigate to HomeScreen
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => HomeScreen()));
                               }
                               setState(() {
                                 showSpinner = false;
@@ -240,7 +244,10 @@ class _LoginState extends State<Login> {
                         color: Color(0xff14DAE2),
                         onPressed: () async {
                           await signInWithGoogle();
-                          // Navigate to HomeScreen
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => HomeScreen()));
                         },
                       ),
                     ),
