@@ -37,7 +37,7 @@ class _GameCounterState extends State<GameCounter> {
         int draw = 0;
         // Create a CollectionReference called users that references the firestore collection
         CollectionReference scores =
-            FirebaseFirestore.instance.collection('singlePlayer');
+        FirebaseFirestore.instance.collection('singlePlayer');
         var user = FirebaseAuth.instance.currentUser!;
         final database = score_database.openDB();
         if (state is OnePlayerInitialState) {
@@ -61,11 +61,11 @@ class _GameCounterState extends State<GameCounter> {
               await scores
                   .doc("Xwins")
                   .set({
-                    "id": "0",
-                    "Name": "${user.email ?? user.displayName ?? "User X"}",
-                    "abbreviation": user.email ?? user.displayName ?? "NA",
-                    "userScore": "${xWins}" // 42
-                  })
+                "id": "0",
+                "Name": "${user.email ?? user.displayName ?? "User X"}",
+                "abbreviation": user.email ?? user.displayName ?? "NA",
+                "userScore": "${xWins}" // 42
+              })
                   .then((value) => print("score Added"))
                   .catchError((error) => print("Failed to add score: $error"));
             }
@@ -75,7 +75,7 @@ class _GameCounterState extends State<GameCounter> {
           } else if (state.winner == "o") {
             Score score = Score(
                 id: 1,
-                abbreviation: user.email ?? user.displayName ?? "NA",
+                abbreviation: "Player O",
                 userScore: oWins);
             score_database.manipulateDatabase(score, database);
 
@@ -84,11 +84,11 @@ class _GameCounterState extends State<GameCounter> {
               await scores
                   .doc("Owins")
                   .set({
-                    "id": "1",
-                    "Name": "User O",
-                    "abbreviation": user.email ?? user.displayName ?? "NA",
-                    "userScore": "${oWins}", // 42/ 42
-                  })
+                "id": "1",
+                "Name": "User O",
+                "abbreviation": "Player O",
+                "userScore": "${oWins}", // 42/ 42
+              })
                   .then((value) => print("score Added"))
                   .catchError((error) => print("Failed to add score: $error"));
             }
@@ -108,11 +108,11 @@ class _GameCounterState extends State<GameCounter> {
               await scores
                   .doc("draws")
                   .set({
-                    "id": "1",
-                    "Name": "Draw",
-                    "abbreviation": user.email ?? user.displayName ?? "NA",
-                    "userScore": "${draw}", // 42// 42
-                  })
+                "id": "1",
+                "Name": "Draw",
+                "abbreviation": user.email ?? user.displayName ?? "NA",
+                "userScore": "${draw}", // 42// 42
+              })
                   .then((value) => print("score Added"))
                   .catchError((error) => print("Failed to add score: $error"));
             }
@@ -128,55 +128,55 @@ class _GameCounterState extends State<GameCounter> {
             children: [
               Card(
                   child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    Image.asset(
-                      "assets/images/x.png",
-                      width: 30,
+                    padding: const EdgeInsets.all(8.0),
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Image.asset(
+                          "assets/images/x.png",
+                          width: 30,
+                        ),
+                        const SizedBox(
+                          height: 10,
+                        ),
+                        Text("${xWins.toString()} Wins"),
+                      ],
                     ),
-                    const SizedBox(
-                      height: 10,
-                    ),
-                    Text("${xWins.toString()} Wins"),
-                  ],
-                ),
-              )),
+                  )),
               Card(
                   child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    Image.asset(
-                      "assets/images/o.png",
-                      width: 30,
+                    padding: const EdgeInsets.all(8.0),
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Image.asset(
+                          "assets/images/o.png",
+                          width: 30,
+                        ),
+                        const SizedBox(
+                          height: 10,
+                        ),
+                        Text("${oWins.toString()} Wins"),
+                      ],
                     ),
-                    const SizedBox(
-                      height: 10,
-                    ),
-                    Text("${oWins.toString()} Wins"),
-                  ],
-                ),
-              )),
+                  )),
               Card(
                   child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    Image.asset(
-                      "assets/images/draw.png",
-                      width: 30,
+                    padding: const EdgeInsets.all(8.0),
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Image.asset(
+                          "assets/images/draw.png",
+                          width: 30,
+                        ),
+                        const SizedBox(
+                          height: 10,
+                        ),
+                        Text("${draw.toString()} Draw"),
+                      ],
                     ),
-                    const SizedBox(
-                      height: 10,
-                    ),
-                    Text("${draw.toString()} Draw"),
-                  ],
-                ),
-              ))
+                  ))
             ],
           );
         } else {

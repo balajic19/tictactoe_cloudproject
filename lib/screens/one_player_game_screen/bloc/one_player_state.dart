@@ -1,5 +1,7 @@
 part of 'one_player_bloc.dart';
 
+
+
 @immutable
 abstract class OnePlayerState {
   const OnePlayerState(this.data, this.isXTurn);
@@ -22,6 +24,8 @@ class OnePlayerInitialState extends OnePlayerState {
   @override
   String toString() =>
       'OnePlayerInitialState(xWin: $xWin, oWin: $oWin, draw: $draw)';
+
+ 
 }
 
 class OnePlayerGameBoardChanged extends OnePlayerState {
@@ -49,3 +53,4 @@ class OnePlayerGameOver extends OnePlayerState {
     return 'GameOver(winner: $winner, xWins: $xWins, oWins: $oWins, draws: $draws)';
   }
 }
+

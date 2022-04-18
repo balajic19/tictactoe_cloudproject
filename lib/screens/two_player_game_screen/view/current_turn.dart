@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:tictactoe_cloudproject/screens/two_player_game_screen/bloc/two_player_bloc.dart';
 
+
+
 class CurrentTurn extends StatelessWidget {
   const CurrentTurn({required this.isXTurn, Key? key}) : super(key: key);
 

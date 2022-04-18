@@ -4,10 +4,12 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:tictactoe_cloudproject/constants/style.dart';
 import 'package:tictactoe_cloudproject/extensions/extensions.dart';
+import 'package:tictactoe_cloudproject/screens/highscore/loadingcreen.dart';
 import 'package:tictactoe_cloudproject/screens/home_screen/bloc/home_screen_bloc/homescreen_bloc.dart';
 import 'package:tictactoe_cloudproject/screens/home_screen/bloc/theme_bloc/bloc/theme_bloc.dart';
 import 'package:tictactoe_cloudproject/screens/home_screen/view/popupmenu.dart';
 import 'package:tictactoe_cloudproject/screens/one_player_game_screen/view/game_screen.dart';
+import 'package:tictactoe_cloudproject/screens/tournaments/tournament.dart';
 import 'package:tictactoe_cloudproject/screens/two_player_game_screen/view/game_screen.dart';
 
 import 'creating_game_dailog.dart';
@@ -147,7 +149,10 @@ class HomeScreenView extends StatelessWidget {
         ElevatedButton(
           style: textButtonStyle,
           onPressed: () {
-            // Navigate to OnePlayerScreen
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => const OnePlayerGameScreen()));
           },
           child: Text("One Player",
               style: Theme.of(context).textTheme.headline6?.boldText),
@@ -155,7 +160,10 @@ class HomeScreenView extends StatelessWidget {
         ElevatedButton(
           style: textButtonStyle,
           onPressed: () {
-            // Navigate to TwoPlayerGameScreen
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => const TwoPlayerGameScreen()));
           },
           child: Text("Two Player",
               style: Theme.of(context).textTheme.headline6?.boldText),
@@ -174,7 +182,8 @@ class HomeScreenView extends StatelessWidget {
         ElevatedButton(
           style: textButtonStyle,
           onPressed: () {
-            // Navigate to LoadingScreen()
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => LoadingScreen()));
           },
           child: Text("High Scores",
               style: Theme.of(context).textTheme.headline6?.boldText),

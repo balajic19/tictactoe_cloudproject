@@ -22,6 +22,8 @@ class TwoPlayerInitialState extends TwoPlayerState {
   @override
   String toString() =>
       'TwoPlayerInitialState(xWin: $xWin, oWin: $oWin, draw: $draw)';
+
+ 
 }
 
 class TwoPlayerGameBoardChanged extends TwoPlayerState {
