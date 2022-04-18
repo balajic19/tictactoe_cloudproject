@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:tictactoe_cloudproject/screens/Profile/view.dart';
 import 'package:tictactoe_cloudproject/screens/home_screen/view/popupitem.dart';
 import 'package:tictactoe_cloudproject/screens/login/login.dart';
+import 'package:tictactoe_cloudproject/screens/tournaments/tournament.dart';
 
 final _auth = FirebaseAuth.instance;
 showPopupMenu(BuildContext context) {

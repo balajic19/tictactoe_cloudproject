@@ -1,5 +1,10 @@
 part of 'one_player_bloc.dart';
 
+
+
+
+
+
 @immutable
 abstract class OnePlayerEvent {}
 
@@ -14,6 +19,7 @@ class TileTapByPlayer extends OnePlayerEvent {
   @override
   String toString() => 'TileTapByPlayer(x: $x, y: $y)';
 }
+
 
 class TileTapByAi extends OnePlayerEvent {
   final int x;
